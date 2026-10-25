@@ -1,9 +1,9 @@
 ---
-title: Your next org chart has agents on it. Who's accountable?
+title: Your next organization chart has agents on it. Who's accountable?
 slug: who-is-accountable-for-ai-agents
 teaser: "Only a quarter of leadership teams agree on who owns their AI agents. Here's how to fix that before it bites."
-tag: AI & org design
-description: Only 24% of leadership teams agree on who is accountable for AI agents. A practical guide for CEOs to assign human ownership, supervision and decision rights for AI agents.
+tag: AI & organization design
+description: Only 24% of leadership teams agree on who is accountable for AI agents. A practical guide for CEOs and executive teams to assign human ownership, supervision and decision rights for AI agents.
 author: Stuart MacMillan & Stephanie Abbott
 date: '2026-10-26'
 color: teal
@@ -11,7 +11,7 @@ key_points:
 - AI agents are already doing work, but most leadership teams haven't agreed who owns them.
 - Every agent needs a named human owner, a supervisor and a clear escalation path.
 - Redesign the workflow before adding the agent, or you'll automate the dysfunction.
-- Accountability for agents is an org design question, and belongs with HR as much as IT.
+- Accountability for agents is an organization design question, and belongs with HR as much as IT.
 sources:
 - title: 'Gartner: CHROs'' top priorities for 2027 (Oct 2026)'
   url: https://www.gartner.com/en/newsroom/press-releases/2026-10-6-gartner-says-chros-top-priorities-for-2027-focus-on-meeting-ceos-expectations-while-minimizing-organizational-risk
@@ -19,7 +19,7 @@ sources:
   url: https://assets-c4akfrf5b4d3f4b7.z01.azurefd.net/assets/2026/07/Becoming-a-Frontier-Firm-second-edition_6a501f92cab29.pdf
 ---
 
-Something quietly changed on most org charts this year. Alongside the boxes for people, there's now work being done by AI agents: drafting responses, reconciling accounts, triaging requests, running parts of a process from start to finish.
+Something quietly changed on most organization charts this year. Alongside the boxes for people, there's now work being done by AI agents: drafting responses, reconciling accounts, triaging requests, running parts of a process from start to finish.
 
 The problem isn't the agents. It's that almost nobody has decided who is responsible for them. In a July 2026 survey of CHROs, Gartner found that only 24% of leadership teams are aligned on who should be accountable for AI agents. At the same time, Gartner reports that 63% of CEOs and senior executives are radically redesigning their operating models to get returns from AI. That is a lot of redesign with very little clarity about ownership.
 

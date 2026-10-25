@@ -5,14 +5,14 @@ latest_posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"
 R = ""
 faqs = [
     ("What does CECai do?",
-     "CECai is a people and organizational advisory firm. We give CEOs and business owners senior HR leadership without a full-time hire: strategic HR advice, fractional and interim HR leadership, talent and succession planning, executive coaching, organizational design and AI readiness, and career transition support."),
+     "CECai is an Atlantic Canadian people and organizational advisory practice. We give CEOs, owners and executive teams senior HR leadership without a full-time hire: strategic HR advice, fractional and interim HR leadership, talent and succession planning, executive coaching, organizational design and AI readiness, and career transition support."),
     ("Who do you work with?",
-     "Founders, CEOs, owners and leadership teams of growing, changing and established organizations. That includes owner-led businesses, scale-ups, municipalities, not-for-profits and divisions of national and global companies. Our team has led HR and change in defence, energy, financial services, technology, e-commerce, manufacturing and the public sector."),
+     "Founders, CEOs, owners and executive teams of growing, changing and established organizations. That includes owner-led businesses, scale-ups, municipalities, not-for-profits and divisions of national and global companies. Our team has led HR and change in defence, energy, financial services, technology, e-commerce, manufacturing and the public sector."),
     ("What is fractional HR leadership?",
-     "Fractional HR leadership means a senior HR executive works with you part-time, often two to eight days a month, as a real member of your leadership team. You get strategic HR judgment and hands-on help at a fraction of the cost of a full-time hire, and you can scale it up or down as you grow."),
-    ("Do you only work in New Brunswick?",
-     "No. We are based in Greater Saint John and work in person across New Brunswick, Nova Scotia, Prince Edward Island and Newfoundland and Labrador. We support clients across Canada and the United States through hybrid and remote engagements."),
-    ("How does AI fit into an HR firm?",
+     "Fractional HR leadership means a senior HR executive works with you part-time, scaled to your needs, as a real member of your leadership team. You get strategic HR judgment and hands-on help at a fraction of the cost of a full-time hire, and you can scale it up or down as you grow."),
+    ("Do you only work in Atlantic Canada?",
+     "No. We work in person across New Brunswick, Nova Scotia, Prince Edward Island and Newfoundland and Labrador, and support clients across Canada and the United States through hybrid and remote engagements."),
+    ("How does AI fit into an HR organization?",
      "AI is changing what jobs contain, how teams are structured and what leaders need to be good at. We help you redesign roles, structures and ways of working for teams of people and AI agents, and we keep the decisions that matter in human hands. Our AI and transformation partner, Stuart MacMillan, advises enterprise AI programs at North American scale."),
     ("How do engagements start?",
      "With a free 30-minute conversation. If there is a fit, we propose a clear scope, timeline and fee, usually within a few days. Many clients start with a short diagnostic or a monthly advisory retainer before moving into a larger piece of work."),
@@ -36,19 +36,19 @@ for i, s in enumerate(SERVICES, 1):
     cards += f'<a class="card link-card practice-card reveal" href="services/{s["slug"]}.html"><span class="num">0{i}</span><h3>{s["title"]}</h3><div class="tags">{tags}</div><p>{s["card"]}</p><span class="textlink">Explore</span></a>'
 cards += '<a class="card link-card reveal" href="contact.html" style="background:var(--teal);border-color:var(--teal);color:var(--cloud)"><span class="num" style="color:#E3CFA8">Start here</span><h3 style="color:var(--cloud)">The People Check-Up</h3><p style="color:rgba(240,238,233,.85)">Not sure where to begin? In one focused session we look at your structure, leadership bench, HR basics and AI exposure, and leave you with three clear priorities. No obligation.</p><span class="textlink" style="color:#fff">Book a check-up</span></a>'
 
-body = head("CECai | Fractional HR, Org Design, Coaching & AI Readiness | Saint John, NB",
-            "Senior HR leadership for CEOs and business owners. Fractional and interim HR, succession, executive coaching, org design and AI readiness, and career transition. Based in Saint John, serving Atlantic Canada and North America.",
+body = head("CECai | Fractional HR, Organization Design, Coaching & AI Readiness | Atlantic Canada",
+            "Senior HR leadership for CEOs, owners and executive teams. Fractional and interim HR, succession, executive coaching, organization design and AI readiness, and career transition. Serving Atlantic Canada and North America.",
             "index.html", R, schema)
 body += header(R, "index.html")
 body += f"""
 <section class="hero">
   {tides()}
   <div class="wrap">
-    <div class="eyebrow">People &amp; organizational advisory &middot; Saint John, New Brunswick</div>
+    <div class="eyebrow">People &amp; organizational advisory &middot; Atlantic Canada</div>
     <h1>The future of work is still <em class="accent">human.</em></h1>
-    <p class="lede">CECai helps CEOs and business owners build the leaders, teams and organizations they need for growth, change and the age of AI. Senior HR leadership, exactly when and how you need it.</p>
+    <p class="lede">CECai helps CEOs, owners and executive teams build the leaders, teams and organizations they need for growth, change and the age of AI. Senior HR leadership, exactly when and how you need it.</p>
     <div class="hero-ctas"><a class="btn btn-primary" href="contact.html">Book a conversation</a><a class="btn btn-ghost" href="services.html">Explore our services</a></div>
-    <div class="hero-meta"><span>25+ years of senior HR leadership</span><span>Atlantic roots, North American reach</span><span>People first. Frontier ready.</span></div>
+    <div class="hero-meta"><span>25+ years of senior HR leadership</span><span>Atlantic roots, North American reach</span><span>People First. Future Ready.</span></div>
   </div>
 </section>
 
@@ -61,7 +61,7 @@ body += f"""
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><div class="eyebrow">What leaders bring to us</div><h2>Every organization has a people question it can't put off much longer.</h2><p class="lede">Here's what CEOs and owners are telling us right now. If one of these sounds familiar, you're in the right place.</p></div>
+    <div class="section-head"><div class="eyebrow">What leaders bring to us</div><h2>Every organization has a people question it can't put off much longer.</h2><p class="lede">Here's what CEOs, owners and executive teams are telling us right now. If one of these sounds familiar, you're in the right place.</p></div>
     <div class="asks reveal">{ask_html}</div>
   </div>
 </section>
@@ -88,8 +88,8 @@ body += f"""
 <section class="section bg-deep" style="position:relative;overflow:hidden">
   <div class="wrap">
     <div class="split even" style="align-items:end;margin-bottom:56px">
-      <div><div class="eyebrow" style="color:#CDE0DE">Frontier work</div><h2>People first.<br><em class="accent" style="color:var(--brass)">Frontier ready.</em></h2></div>
-      <div><p style="opacity:.88">Most AI advice starts with the technology. Ours starts with your people. Leading companies are moving from employees using AI assistants, to people working alongside AI agents, to people directing whole processes that agents run. Each step changes job design, structure, accountability and what great leadership looks like. That is HR's work, and it is ours.</p><a class="btn btn-light" href="frontier.html">See how we help</a></div>
+      <div><div class="eyebrow" style="color:#CDE0DE">People &amp; AI</div><h2>People First.<br><em class="accent" style="color:var(--brass)">Future Ready.</em></h2></div>
+      <div><p style="opacity:.88">Most AI advice starts with the technology. Ours starts with your people. Leading companies are moving from employees using AI assistants, to people working alongside AI agents, to people directing whole processes that agents run. Each step changes job design, structure, accountability and what great leadership looks like. That is HR's work, and it is ours.</p><a class="btn btn-light" href="people-and-ai.html">See how we help</a></div>
     </div>
     <div class="levels reveal">
       <div class="level"><div class="lv">Level 1</div><h3>Every person has an assistant</h3><p>Leaders model AI use. Roles stay the same, the work inside them speeds up. The people task: confidence, skills and honest communication.</p><div class="bar"><i style="width:33%"></i></div></div>
@@ -104,9 +104,9 @@ body += f"""
   <div class="wrap">
     <div class="section-head"><div class="eyebrow">How we engage</div><h2>Four ways to work together. Pick one, or move between them as you grow.</h2></div>
     <div class="models reveal">
-      <div class="model"><div class="verb">Advise</div><h3>Strategic HR advisory</h3><p>A monthly retainer that puts a senior HR advisor at the CEO's table for the decisions that matter.</p></div>
+      <div class="model"><div class="verb">Advise</div><h3>Strategic HR advisory</h3><p>A monthly retainer that gives you a senior HR advisor for the decisions that matter.</p></div>
       <div class="model"><div class="verb">Lead</div><h3>Fractional &amp; interim</h3><p>We step in as your head of HR, part-time or through a leadership gap, and run the function.</p></div>
-      <div class="model"><div class="verb">Build</div><h3>Projects</h3><p>Focused work with a clear end: org design, succession, HR foundations, AI readiness, restructuring.</p></div>
+      <div class="model"><div class="verb">Build</div><h3>Projects</h3><p>Focused work with a clear end: organization design, succession, HR foundations, AI readiness, restructuring.</p></div>
       <div class="model"><div class="verb">Coach</div><h3>Leaders &amp; teams</h3><p>Certified executive coaching for individuals, leadership teams and managers leading through change.</p></div>
     </div>
     <p class="mt2"><a class="textlink" href="approach.html">How our engagements work</a></p>
@@ -115,12 +115,12 @@ body += f"""
 
 <section class="section bg-white">
   <div class="wrap split">
-    <div class="portrait-frame reveal" style="max-width:380px"><div class="portrait"><span class="mono">SA</span><span class="note">Portrait to come</span></div></div>
+    <div class="portrait-frame reveal" style="max-width:380px">{face("SA", "")}</div>
     <div>
       <div class="eyebrow">Meet our principal</div>
       <blockquote class="pull">High-impact Human Resources transforms organizations by building trust, inspiring collaboration and deepening engagement, turning people strategy into sustained performance.</blockquote>
       <p class="attrib"><b>Stephanie Abbott, CPHR, CEC</b>Principal &amp; Managing Partner, CECai</p>
-      <p class="mt2 muted">Stephanie has spent more than 25 years leading HR at Canadian and multinational organizations, including Lockheed Martin, JPMorgan Chase and Amazon. CEOs bring her in when they are scaling quickly, integrating an acquisition, restructuring, or building HR for the first time. Clients say she builds trust quickly, cuts through complexity and coaches leaders through the hard parts.</p>
+      <p class="mt2 muted">Stephanie has spent more than 25 years leading HR at Canadian and multinational organizations, including Lockheed Martin, JPMorgan Chase and Amazon. CEOs, owners and executive teams bring her in when they are scaling quickly, integrating an acquisition, restructuring, or building HR for the first time. Clients say she builds trust quickly, cuts through complexity and coaches leaders through the hard parts.</p>
       <div class="hero-ctas mt2"><a class="btn btn-primary" href="people/stephanie-abbott.html">Read Stephanie's story</a><a class="btn btn-ghost" href="team.html">Meet the team</a></div>
     </div>
   </div>
@@ -130,8 +130,9 @@ body += f"""
   <div class="wrap region">
     <div>
       <div class="eyebrow">Where we work</div>
-      <h2>Rooted in Saint John. Built for North America.</h2>
+      <h2>Rooted in Atlantic Canada. Built for North America.</h2>
       <p class="lede">We know what it takes to lead in Atlantic Canada: tight-knit communities, family-owned businesses, unionized workplaces, bilingual teams and talent that is hard to replace. We bring that understanding, plus global experience, to every client.</p>
+      <p class="small muted mt2 mb0">Serving clients in Saint John, Moncton, Fredericton, Halifax, Charlottetown, St. John's and communities across Atlantic Canada, with virtual support across North America.</p>
     </div>
     <ul class="reach reveal">
       <li><b>Atlantic Canada</b><span>In person across New Brunswick, Nova Scotia, Prince Edward Island and Newfoundland and Labrador.</span></li>

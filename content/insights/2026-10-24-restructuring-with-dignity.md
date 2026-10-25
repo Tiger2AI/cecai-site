@@ -5,12 +5,12 @@ teaser: "Five practical moves that protect your people, your culture and your re
 tag: Transitions
 description: LHH research finds 87% of HR leaders have conducted or plan layoffs and most see restructuring as a regular event. Five practical moves to restructure with dignity and protect trust.
 author: Stephanie Abbott
-date: '2026-10-26'
+date: '2026-10-24'
 color: cocoa
 key_points:
 - 87% of HR leaders have conducted or plan layoffs; 78% now see layoffs as regular events.
 - 77% say redeployment programs exist, but only 19% of employees know about them.
-- Employers who track it mostly find rehiring costs more than redeployment.
+- Employers who track it mostly find rehiring costs more than moving people into new roles.
 - How you treat people who leave shapes the trust of everyone who stays.
 sources:
 - title: 'LHH research: 87% of HR leaders have conducted or plan layoffs in 2026'
@@ -23,7 +23,7 @@ I've led the people side of reorganizations and workforce reductions more than o
 
 ## Five moves that make the difference
 
-**1. Redeploy first, and mean it.** LHH found that 77% of HR leaders say redeployment programs exist, but only 19% of employees recognize them. A program nobody knows about doesn't help anyone. Look seriously for internal moves before you finalize who is affected. Most employers who track it find rehiring costs more than redeploying.
+**1. Look for new roles inside first, and mean it.** LHH found that 77% of HR leaders say redeployment programs exist, but only 19% of employees recognize them. A program nobody knows about doesn't help anyone. Look seriously for internal moves before you finalize who is affected. Most employers who track it find rehiring costs more than moving people into new roles.
 
 **2. Prepare your managers.** Notification conversations are among the hardest any leader will have. Practice them. Give managers clear messages, answers to likely questions and support for themselves.
 

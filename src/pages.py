@@ -4,22 +4,22 @@ import datetime
 
 # ---------------- FRONTIER ----------------
 R = ""
-trail = [("frontier.html", "Frontier Work")]
+trail = [("people-and-ai.html", "People & AI")]
 faqs = [
   ("What is a Frontier Firm?", "It's Microsoft's term for an organization that uses AI to advance its business strategy and redesign how work gets done, rather than adopting AI for its own sake. Its research describes a progression from people with AI assistants, to human and agent teams, to human-led, agent-operated processes."),
   ("Is this only for large enterprises?", "No. Small and mid-sized organizations can move faster because they have fewer layers. The people questions are the same at any size: which work changes, who is accountable, and how you bring your team with you."),
   ("Will AI mean we need fewer people?", "Sometimes it changes how many people a process needs, and often it changes what those people do. Leading organizations are pushing past efficiency toward growth and better service, and they avoid automating away the entry-level roles that build their future leaders. We help you make these choices deliberately and communicate them honestly."),
   ("Do you sell or implement AI software?", "No. We are vendor-neutral on the people side. We work alongside your technology partners, or recommend them, and focus on roles, structure, skills, accountability, adoption and measurement."),
 ]
-body = head("Frontier Work | The People Side of AI | CECai", "Get your organization ready for human and AI agent teams. Role redesign, agent accountability, workforce planning, leadership and adoption, from an HR-led team with enterprise AI experience.", "frontier.html", R, [ORG, faq_schema(faqs), crumb_schema(trail)])
-body += header(R, "frontier.html")
+body = head("People & AI | The People Side of AI | CECai", "Get your organization ready for human and AI agent teams. Role redesign, agent accountability, workforce planning, leadership and adoption, from an HR-led team with enterprise AI experience.", "people-and-ai.html", R, [ORG, faq_schema(faqs), crumb_schema(trail)])
+body += header(R, "people-and-ai.html")
 body += f"""
 <section class="page-hero bg-deep" style="color:var(--cloud)">{tides(stroke="#F0EEE9", lines=14, seed=6, opacity_base=.15)}<div class="wrap" style="position:relative;z-index:2">
-<nav class="crumbs" aria-label="Breadcrumb" style="color:rgba(240,238,233,.7)"><a href="index.html" style="color:rgba(240,238,233,.7)">Home</a><span>/</span>Frontier Work</nav>
-<div class="eyebrow" style="color:#CDE0DE">Frontier work</div>
+<nav class="crumbs" aria-label="Breadcrumb" style="color:rgba(240,238,233,.7)"><a href="index.html" style="color:rgba(240,238,233,.7)">Home</a><span>/</span>People &amp; AI</nav>
+<div class="eyebrow" style="color:#CDE0DE">People &amp; AI &middot; The people side of AI</div>
 <h1 style="color:var(--cloud)">AI changes the work. <em class="accent" style="color:var(--brass)">People</em> change the organization.</h1>
 <p class="lede mt2" style="color:rgba(240,238,233,.85)">The organizations getting real value from AI aren't the ones with the most tools. They're the ones that redesigned roles, structures and leadership around a new way of working. That's people work, and it's what we do.</p>
-<div class="hero-ctas mt2"><a class="btn btn-light" href="contact.html">Book a Frontier Readiness conversation</a></div>
+<div class="hero-ctas mt2"><a class="btn btn-light" href="contact.html">Book a People &amp; AI Readiness conversation</a></div>
 </div></section>
 
 <section class="section bg-white"><div class="wrap split">
@@ -54,7 +54,7 @@ body += f"""
 </div></section>
 
 <section class="section bg-white"><div class="wrap split">
-  <div class="portrait-frame reveal" style="max-width:360px"><div class="portrait brass"><span class="mono">SM</span><span class="note">Portrait to come</span></div></div>
+  <div class="portrait-frame reveal" style="max-width:360px">{face("SM", R, "brass")}</div>
   <div>
     <div class="eyebrow">Your AI and transformation partner</div>
     <h2>Enterprise AI experience, applied to your scale.</h2>
@@ -65,7 +65,7 @@ body += f"""
 </div></section>
 
 <section class="section bg-paper"><div class="wrap">
-  <div class="section-head"><div class="eyebrow">Where to start</div><h2>The Frontier Readiness Diagnostic</h2><p class="lede">In four to six weeks we assess where AI will change work in your organization, how ready your leaders, structure and HR systems are, and what to do first. You leave with a 12-month people roadmap your leadership team can act on.</p></div>
+  <div class="section-head"><div class="eyebrow">Where to start</div><h2>People &amp; AI Readiness</h2><p class="lede">In four to six weeks we assess where AI will change work in your organization, how ready your leaders, structure and HR systems are, and what to do first. You leave with a 12-month people roadmap your leadership team can act on.</p></div>
   <div class="steps reveal">
     <div class="step"><h3>Ambition</h3><p>Anchor AI to your business goals, with a named executive owner for each.</p></div>
     <div class="step"><h3>Work</h3><p>Map priority roles and workflows. Lean the process before adding agents.</p></div>
@@ -77,11 +77,11 @@ body += f"""
 body += faq_block(faqs, "Questions about AI and your people")
 body += cta(R, "Ready to lead the people side of AI?", "Start with a conversation about where you are, where you want to be, and what's standing in the way.")
 body += footer(R)
-write("frontier.html", body)
+write("people-and-ai.html", body)
 
 # ---------------- APPROACH ----------------
 trail = [("approach.html", "How We Work")]
-body = head("How We Work | Engagement Models & Principles | CECai", "How CECai works with CEOs and owners: advisory retainers, fractional and interim leadership, fixed-scope projects and coaching. Senior people, plain language, practical results.", "approach.html", R, [ORG, crumb_schema(trail)])
+body = head("How We Work | Engagement Models & Principles | CECai", "How CECai works with CEOs, owners and executive teams: advisory retainers, fractional and interim leadership, fixed-scope projects and coaching. Senior people, plain language, practical results.", "approach.html", R, [ORG, crumb_schema(trail)])
 body += header(R, "approach.html")
 body += f"""
 <section class="page-hero">{tides(lines=12, seed=8)}<div class="wrap" style="position:relative;z-index:2">
@@ -106,9 +106,9 @@ body += f"""
 <section class="section"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Engagement models</div><h2>Four ways to work together.</h2></div>
   <div class="models reveal">
-    <div class="model"><div class="verb">Advise</div><h3>Strategic HR advisory</h3><p>Monthly retainer. Regular time with the CEO and leadership team, on-call support for urgent issues, and a quarterly people review.</p></div>
-    <div class="model"><div class="verb">Lead</div><h3>Fractional &amp; interim</h3><p>We lead your HR function, two to eight days a month or full-time through a gap, as a member of your leadership team.</p></div>
-    <div class="model"><div class="verb">Build</div><h3>Fixed-scope projects</h3><p>Org design, succession, HR foundations, AI readiness or restructuring, with a clear scope, timeline and fee.</p></div>
+    <div class="model"><div class="verb">Advise</div><h3>Strategic HR advisory</h3><p>Monthly retainer. Regular time with you and your executive team, on-call support for urgent issues, and a quarterly people review.</p></div>
+    <div class="model"><div class="verb">Lead</div><h3>Fractional &amp; interim</h3><p>We lead your HR function, part-time or full-time through a gap, as a member of your leadership team.</p></div>
+    <div class="model"><div class="verb">Build</div><h3>Fixed-scope projects</h3><p>Organization design, succession, HR foundations, AI readiness or restructuring, with a clear scope, timeline and fee.</p></div>
     <div class="model"><div class="verb">Coach</div><h3>Leaders &amp; teams</h3><p>One-to-one executive coaching, leadership team work and manager cohorts, in person or virtual.</p></div>
   </div>
 </div></section>
@@ -150,7 +150,7 @@ COLLECTIVE = [
 trail = [("team.html", "Team")]
 body = head("Our Team | Stephanie Abbott, Stuart MacMillan & the CECai Collective", "Meet CECai's principals, Stephanie Abbott (CPHR, CEC) and Stuart MacMillan (MCMP, CPHR), and the senior specialists of the CECai Collective.", "team.html", R, [ORG, crumb_schema(trail)])
 body += header(R, "team.html")
-coll = "".join(f'<article class="person reveal"><div class="portrait {t}"><span class="mono">{m}</span></div><h3 style="margin-bottom:4px">{n}</h3><div class="role">{r}</div><div class="creds" style="margin-bottom:10px">{c}</div><p>{b}</p></article>' for n, r, c, m, t, b in COLLECTIVE)
+coll = "".join(f'<article class="person reveal">{face(m, R, t, note=False)}<h3 style="margin-bottom:4px">{n}</h3><div class="role">{r}</div><div class="creds" style="margin-bottom:10px">{c}</div><p>{b}</p></article>' for n, r, c, m, t, b in COLLECTIVE)
 body += f"""
 <section class="page-hero">{tides(lines=12, seed=10)}<div class="wrap" style="position:relative;z-index:2">
 {crumbs(R, trail)}
@@ -162,15 +162,15 @@ body += f"""
 <section class="section bg-white"><div class="wrap">
   <div class="grid g2" style="gap:56px">
     <article class="person reveal">
-      <div class="portrait" style="max-width:340px"><span class="mono">SA</span><span class="note">Portrait to come</span></div>
+      {face("SA", R, "", "max-width:340px")}
       <h2 style="font-size:2rem;margin-bottom:4px">Stephanie Abbott</h2>
       <div class="creds" style="margin-bottom:8px">CPHR &middot; CEC</div>
       <div class="role">Principal &amp; Managing Partner</div>
-      <p>Strategic HR partner, fractional and interim HR leader and Certified Executive Coach. Stephanie has spent 25+ years leading HR at Canadian and multinational organizations, including Lockheed Martin, JPMorgan Chase and Amazon, and advises CEOs on organizational design, talent, succession and leadership.</p>
+      <p>Strategic HR partner, fractional and interim HR leader and Certified Executive Coach. Stephanie has spent 25+ years leading HR at Canadian and multinational organizations, including Lockheed Martin, JPMorgan Chase and Amazon, and advises CEOs, owners and executive teams on organizational design, talent, succession and leadership.</p>
       <a class="textlink" href="people/stephanie-abbott.html">Full profile</a>
     </article>
     <article class="person reveal">
-      <div class="portrait brass" style="max-width:340px"><span class="mono">SM</span><span class="note">Portrait to come</span></div>
+      {face("SM", R, "brass", "max-width:340px")}
       <h2 style="font-size:2rem;margin-bottom:4px">Stuart MacMillan</h2>
       <div class="creds" style="margin-bottom:8px">MCMP &middot; CCMP &middot; CPHR &middot; P.BPM</div>
       <div class="role">Partner, AI &amp; Transformation</div>
@@ -195,7 +195,7 @@ def person_page(slug, name, creds, role, mono, tone, desc, intro, sections, sche
     path = f"people/{slug}.html"
     trail = [("team.html", "Team"), (path, name)]
     p = {"@context": "https://schema.org", "@type": "Person", "@id": f"{SITE}/{path}#person", "name": name, "jobTitle": role,
-         "worksFor": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/{path}", "address": {"@type": "PostalAddress", "addressLocality": "Saint John", "addressRegion": "NB", "addressCountry": "CA"}}
+         "worksFor": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/{path}", "address": {"@type": "PostalAddress", "addressRegion": "NB", "addressCountry": "CA"}}
     p.update(schema_extra)
     b = head(f"{name}, {creds} | {role} | CECai", desc, path, R, [p, crumb_schema(trail)], og_type="profile")
     b += header(R, "team.html")
@@ -204,7 +204,7 @@ def person_page(slug, name, creds, role, mono, tone, desc, intro, sections, sche
 <section class="page-hero">{tides(lines=12, seed=12 if tone else 3)}<div class="wrap" style="position:relative;z-index:2">
 {crumbs(R, trail)}
 <div class="split" style="align-items:center">
-  <div class="portrait-frame" style="max-width:340px"><div class="portrait {tone}"><span class="mono">{mono}</span><span class="note">Portrait to come</span></div></div>
+  <div class="portrait-frame" style="max-width:340px">{face(mono, R, tone, eager=True)}</div>
   <div><div class="eyebrow">{role}</div><h1 style="font-size:clamp(2.4rem,5vw,3.6rem)">{name}</h1><div class="creds" style="font-size:.9rem">{creds}</div><p class="lede mt2">{intro}</p></div>
 </div>
 </div></section>
@@ -217,10 +217,10 @@ def person_page(slug, name, creds, role, mono, tone, desc, intro, sections, sche
 ul = lambda xs: '<ul class="check">' + "".join(f"<li>{x}</li>" for x in xs) + "</ul>"
 person_page("stephanie-abbott", "Stephanie Abbott", "CPHR, CEC", "Principal & Managing Partner", "SA", "",
   "Stephanie Abbott, CPHR, CEC, is CECai's Principal: a strategic HR partner, fractional and interim HR leader and Certified Executive Coach with 25+ years leading HR at Lockheed Martin, JPMorgan Chase, Amazon and more.",
-  "Stephanie helps CEOs and leadership teams turn strategy into results by building the organizational, leadership and people capability behind it.",
+  "Stephanie helps CEOs, owners and executive teams turn strategy into results by building the organizational, leadership and people capability behind it.",
   [("Overview", "<p>Stephanie has spent more than 25 years leading Human Resources at Canadian and multinational organizations, including Lockheed Martin, JPMorgan Chase and Amazon, with 15+ years leading HR functions across multi-region and global organizations. She now brings that experience to organizations that need senior HR leadership without a full-time hire, or that need support quickly.</p><p>Organizations typically bring Stephanie in when they are scaling quickly, integrating an acquisition, restructuring, building HR for the first time, or strengthening an existing HR function. Clients value her ability to build trust quickly, cut through complexity, deliver practical solutions and coach leaders through challenges and change.</p>"),
    ("In her words", '<blockquote class="pull" style="font-size:1.6rem">High-impact Human Resources transforms organizations by building trust, inspiring collaboration and deepening engagement, turning people strategy into sustained performance.</blockquote>'),
-   ("How Stephanie works with clients", ul(["<b>Strategic HR advisory.</b> An ongoing advisor to the CEO and leadership team on people strategy, organizational design and leadership decisions.", "<b>Fractional HR leadership.</b> Senior HR leadership a few days a week or month for organizations that need a strategic HR executive, but not a full-time one.", "<b>Interim HR leadership.</b> Steps in quickly during a leadership gap, restructuring or period of rapid change, keeping the function stable and moving.", "<b>Project-based consulting.</b> Organizational design and effectiveness, workforce and succession planning, talent strategy, leadership development and HR transformation.", "<b>Executive coaching.</b> Certified coaching for senior leaders, leadership transitions and teams."])),
+   ("How Stephanie works with clients", ul(["<b>Strategic HR advisory.</b> An ongoing advisor to you and your executive team on people, organizational design and leadership decisions.", "<b>Fractional HR leadership.</b> Senior HR leadership, part-time, for organizations that need a strategic HR executive, but not a full-time one.", "<b>Interim HR leadership.</b> Steps in quickly during a leadership gap, restructuring or period of rapid change, keeping the function stable and moving.", "<b>Project-based consulting.</b> Organizational design and effectiveness, workforce and succession planning, talent strategy, leadership development and HR transformation.", "<b>Executive coaching.</b> Certified coaching for senior leaders, leadership transitions and teams."])),
    ("Career highlights", ul(["Head of Human Resources for a Lockheed Martin Canada division and member of its Canadian senior leadership team; led the HR workstream of a multi-phased national reorganization and division-wide succession and workforce planning.", "HR Director across Canada, the U.S. and U.K. for a global safety equipment manufacturer; built a business case that moved U.S. recruitment in-house for $132K in annual savings, and led a market wage strategy that improved recruitment and retention.", "HR Site Lead at an Amazon Canada fulfillment centre, leading a 12-person HR team in a high-volume, complex operation.", "HR Manager and corporate leadership team member for a growing Alberta municipality; rebuilt the HR team and processes and led the people side of a utility acquisition.", "HR and safety leader for a Newell Rubbermaid manufacturing site, with global health and safety audit scores of 97% and 98%, tied for highest worldwide.", "Fractional Head of Global HR for a high-growth technology company, and Director-level HR advisor to municipal and not-for-profit clients through CECai."])),
    ("Experience across sectors", "<p>Defence, energy, financial services, technology, e-commerce, manufacturing, municipal government, and the public and not-for-profit sectors.</p>"),
    ("Credentials", ul(["Chartered Professional in Human Resources (CPHR), CPHR New Brunswick", "Certified Executive Coach (CEC) and Graduate Certificate in Executive Coaching, Royal Roads University", "Bachelor of Business Administration (HR major), Husson University", "Diploma in Business Administration (HR major), Algonquin College"])),
@@ -246,13 +246,13 @@ R = ""
 trail = [("collective.html", "The CECai Collective")]
 body = head("The CECai Collective | Senior Partner Network | CECai", "The CECai Collective is a network of senior specialists in AI, digital, ERP and organizational transformation who extend CECai's HR advisory practice. One trusted lead, a bench of experts.", "collective.html", R, [ORG, crumb_schema(trail)])
 body += header(R, "team.html")
-coll = "".join(f'<article class="person reveal"><div class="portrait {t}"><span class="mono">{m}</span></div><h3 style="margin-bottom:4px">{n}</h3><div class="role">{r}</div><div class="creds" style="margin-bottom:10px">{c}</div><p>{b}</p></article>' for n, r, c, m, t, b in COLLECTIVE)
+coll = "".join(f'<article class="person reveal">{face(m, R, t, note=False)}<h3 style="margin-bottom:4px">{n}</h3><div class="role">{r}</div><div class="creds" style="margin-bottom:10px">{c}</div><p>{b}</p></article>' for n, r, c, m, t, b in COLLECTIVE)
 body += f"""
 <section class="page-hero">{tides(lines=12, seed=14)}<div class="wrap" style="position:relative;z-index:2">
 {crumbs(R, trail)}
 <div class="eyebrow">The CECai Collective</div>
 <h1>One trusted lead. <em class="accent">A bench</em> of senior specialists.</h1>
-<p class="lede mt2">Big challenges rarely fit inside one discipline. The Collective lets us bring the right senior expertise to your work, without the overhead of a large firm.</p>
+<p class="lede mt2">Big challenges rarely fit inside one discipline. The Collective lets us bring the right senior expertise to your work, without the overhead of a large organization.</p>
 </div></section>
 <section class="section bg-white"><div class="wrap">
   <div class="grid g3">
