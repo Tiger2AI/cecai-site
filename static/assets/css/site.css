@@ -23,6 +23,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { margin: 0; font-family: var(--sans); font-size: 18px; line-height: 1.65; color: var(--ink); background: var(--cloud); }
 img, svg { max-width: 100%; display: block; }
+img { height: auto; }
 a { color: var(--teal); text-underline-offset: 3px; }
 a:hover { color: var(--teal-deep); }
 h1, h2, h3, h4 { color: var(--ink); margin: 0 0 .5em; }
