@@ -35,5 +35,13 @@
       box.className = 'form';
     });
   }
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var t = btn.getAttribute('data-copy'), label = btn.textContent;
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = label; }, 1800); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { window.prompt('Copy this address:', t); });
+      else window.prompt('Copy this address:', t);
+    });
+  });
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
