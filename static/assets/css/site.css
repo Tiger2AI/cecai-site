@@ -356,3 +356,6 @@ em.accent { font-style: italic; color: var(--teal); }
 .article-hero picture { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--teal-soft); }
 .article-hero img { width: 100%; height: 100%; object-fit: cover; }
 @media (prefers-reduced-motion: reduce) { .post .art img { transition: none; } }
+
+.email-card .email-big { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2rem); margin: 18px 0 22px; overflow-wrap: anywhere; }
+.email-card .email-big a { text-decoration: none; border-bottom: 1px solid var(--brass); }

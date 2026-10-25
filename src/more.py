@@ -64,8 +64,6 @@ write("faq.html", body)
 
 # ---------------- CONTACT ----------------
 trail = [("contact.html", "Contact")]
-topics = ["Fractional or interim HR", "Succession & talent", "Executive coaching", "Organization design & AI readiness", "Restructuring & transitions", "Not sure yet"]
-chips = "".join(f'<label><input type="checkbox" name="topic" value="{t}"><span>{t}</span></label>' for t in topics)
 cp = {"@context": "https://schema.org", "@type": "ContactPage", "name": "Contact CECai", "url": f"{SITE}/contact.html", "about": {"@id": f"{SITE}/#org"}}
 body = head("Contact | Book a Conversation | CECai, Atlantic Canada", "Book a free 30-minute conversation with CECai about fractional HR, succession, coaching, AI readiness or restructuring. Serving Atlantic Canada and North America.", "contact.html", R, [ORG, cp, crumb_schema(trail)])
 body += header(R, "")
@@ -82,16 +80,20 @@ body += f"""<section class="page-hero">{tides(lines=12, seed=20)}<div class="wra
     <li><b>Reply</b><span>Within one business day.</span></li>
   </ul>
 </div>
-<form class="form" data-contact="{EMAIL}">
-  <div class="row2"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
-  <div class="field"><label for="role">Your role</label><input id="role" name="role" autocomplete="organization-title" placeholder="e.g. CEO, Owner"></div></div>
-  <div class="row2"><div class="field"><label for="org">Organization</label><input id="org" name="org" autocomplete="organization"></div>
-  <div class="field"><label for="size">Size</label><select id="size" name="size"><option>Under 50 people</option><option>50 to 250</option><option>250 to 1,000</option><option>1,000+</option></select></div></div>
-  <div class="field"><label>What would you like to talk about?</label><div class="chips">{chips}</div></div>
-  <div class="field"><label for="message">What's on your mind?</label><textarea id="message" name="message" placeholder="A sentence or two is plenty."></textarea></div>
-  <button class="btn btn-primary" type="submit">Request a conversation</button>
-  <p class="small muted mt2 mb0">We keep what you share confidential.</p>
-</form>
+<div class="form email-card">
+  <div class="eyebrow">Email Stephanie</div>
+  <h2 style="font-size:clamp(1.6rem,3vw,2.1rem)">The quickest way to start is a short email.</h2>
+  <p class="email-big"><a href="mailto:{EMAIL}?subject=Conversation%20request">{EMAIL}</a></p>
+  <div class="hero-ctas"><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Conversation%20request">Email Stephanie</a><button class="btn btn-ghost" type="button" data-copy="{EMAIL}">Copy address</button></div>
+  <p class="muted mt3 mb0" style="font-weight:600;color:var(--ink)">A few lines is plenty. It helps to include:</p>
+  <ul class="check mt2">
+    <li>Your name, role and organization</li>
+    <li>Roughly how many people work there</li>
+    <li>What's happening, and what you'd like help with</li>
+    <li>A couple of times that suit you for a 30-minute call</li>
+  </ul>
+  <p class="small muted mb0">Stephanie replies within one business day. Everything you share is kept confidential.</p>
+</div>
 </div></div></section>"""
 body += footer(R)
 write("contact.html", body)
