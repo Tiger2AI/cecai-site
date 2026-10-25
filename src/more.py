@@ -152,7 +152,7 @@ llms = f"""# CECai
 ## Key facts
 - Principal & Managing Partner: Stephanie Abbott, CPHR, CEC. 25+ years leading HR at Canadian and multinational organizations including Lockheed Martin, JPMorgan Chase and Amazon. Certified Executive Coach (Royal Roads University).
 - Partner, AI & Transformation: Stuart MacMillan, MCMP, CCMP, PCACP, CPHR, P.BPM. 23+ years and 22 enterprise transformation engagements; advises enterprise AI programs above 100,000 users; Prosci's Canadian AI Change Principal.
-- The CECai Collective: senior partner network in AI, digital, ERP, workplace protection and compliance, and organizational transformation (Michael McConachie, Steve Wakeham, Paul Bellavance, Darcy Daoust, Carol Kotacka).
+- The CECai Collective: senior partner network in AI, digital, ERP, workplace protection and compliance, and organizational transformation (Darcy Daoust, Carol Kotacka, Steve Wakeham, Michael McConachie, Paul Bellavance).
 - Engagement models: Advise (retainer), Lead (fractional or interim), Build (fixed-scope projects), Coach (leaders and teams).
 - First step: a free 30-minute conversation. Contact: {EMAIL}
 - Languages: English and French.
