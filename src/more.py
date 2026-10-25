@@ -1,3 +1,4 @@
+import html
 import datetime
 from common import *
 from services import SVC
@@ -10,11 +11,11 @@ ARTICLES = load_articles()
 R = ""
 trail = [("insights.html", "Insights")]
 posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"><div class="art" style="background:{a["color"]}">{tides(400,150,7,seed=a["seed"],stroke="#F0EEE9",cls="",opacity_base=.25)}</div><div class="body"><div class="meta">{a["tag"]}</div><h3>{a["title"]}</h3><p>{a["desc"]}</p><span class="textlink" style="margin-top:auto">Read</span></div></a>' for a in ARTICLES)
-body = head("Insights | HR, Succession, AI and Change for CEOs | CECai", "Practical thinking for CEOs and owners on fractional HR, succession, AI and org design, leadership and restructuring, from CECai in Saint John, NB.", "insights.html", R, [ORG, crumb_schema(trail)])
+body = head("Insights | HR, Succession, AI and Change for CEOs & Executive Teams | CECai", "Practical thinking for CEOs, owners and executive teams on fractional HR, succession, AI and organization design, leadership and restructuring, from CECai in Atlantic Canada.", "insights.html", R, [ORG, crumb_schema(trail)])
 body += header(R, "insights.html")
-body += f"""<section class="page-hero">{tides(lines=12, seed=16)}<div class="wrap" style="position:relative;z-index:2">{crumbs(R, trail)}<div class="eyebrow">Insights</div><h1>Practical thinking for <em class="accent">the year ahead.</em></h1><p class="lede mt2">Short, useful pieces for CEOs and owners on the people questions that matter most right now.</p></div></section>
+body += f"""<section class="page-hero">{tides(lines=12, seed=16)}<div class="wrap" style="position:relative;z-index:2">{crumbs(R, trail)}<div class="eyebrow">Insights</div><h1>Practical thinking for <em class="accent">the year ahead.</em></h1><p class="lede mt2">Short, useful pieces for CEOs, owners and executive teams on the people questions that matter most right now.</p></div></section>
 <section class="section tight"><div class="wrap grid g3">{posts}</div></section>
-<section class="section bg-white"><div class="wrap split even"><div><div class="eyebrow">Coming soon</div><h2>The CECai Briefing</h2></div><div><p class="lede">A short monthly note on people, leadership and AI for Atlantic Canadian CEOs and owners. One idea, one statistic, one thing to try.</p><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Subscribe%20to%20the%20CECai%20Briefing">Subscribe by email</a></div></div></section>"""
+<section class="section bg-white"><div class="wrap split even"><div><div class="eyebrow">Coming soon</div><h2>The CECai Briefing</h2></div><div><p class="lede">A short monthly note on people, leadership and AI for Atlantic Canadian CEOs, owners and executive teams. One idea, one statistic, one thing to try.</p><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Subscribe%20to%20the%20CECai%20Briefing">Subscribe by email</a></div></div></section>"""
 body += cta(R)
 body += footer(R)
 write("insights.html", body)
@@ -62,10 +63,10 @@ write("faq.html", body)
 
 # ---------------- CONTACT ----------------
 trail = [("contact.html", "Contact")]
-topics = ["Fractional or interim HR", "Succession & talent", "Executive coaching", "Org design & AI readiness", "Restructuring & transitions", "Not sure yet"]
+topics = ["Fractional or interim HR", "Succession & talent", "Executive coaching", "Organization design & AI readiness", "Restructuring & transitions", "Not sure yet"]
 chips = "".join(f'<label><input type="checkbox" name="topic" value="{t}"><span>{t}</span></label>' for t in topics)
 cp = {"@context": "https://schema.org", "@type": "ContactPage", "name": "Contact CECai", "url": f"{SITE}/contact.html", "about": {"@id": f"{SITE}/#org"}}
-body = head("Contact | Book a Conversation | CECai, Saint John NB", "Book a free 30-minute conversation with CECai about fractional HR, succession, coaching, AI readiness or restructuring. Based in Greater Saint John, New Brunswick.", "contact.html", R, [ORG, cp, crumb_schema(trail)])
+body = head("Contact | Book a Conversation | CECai, Atlantic Canada", "Book a free 30-minute conversation with CECai about fractional HR, succession, coaching, AI readiness or restructuring. Serving Atlantic Canada and North America.", "contact.html", R, [ORG, cp, crumb_schema(trail)])
 body += header(R, "")
 body += f"""<section class="page-hero">{tides(lines=12, seed=20)}<div class="wrap" style="position:relative;z-index:2">{crumbs(R, trail)}
 <div class="split" style="align-items:start">
@@ -76,7 +77,7 @@ body += f"""<section class="page-hero">{tides(lines=12, seed=20)}<div class="wra
   <ul class="reach mt3">
     <li><b>Stephanie</b><span>HR leadership, talent, coaching and transitions<br><a href="mailto:{EMAIL}">{EMAIL}</a></span></li>
     <li><b>Stuart</b><span>AI, transformation and change<br><a href="mailto:{AI_EMAIL}">{AI_EMAIL}</a></span></li>
-    <li><b>Where</b><span>Greater Saint John, New Brunswick. In person across Atlantic Canada, virtual across North America.</span></li>
+    <li><b>Where</b><span>Across Atlantic Canada, in person, and virtually across North America. Serving Saint John, Moncton, Fredericton, Halifax, Charlottetown, St. John's and communities in between.</span></li>
     <li><b>Reply</b><span>Within one business day.</span></li>
   </ul>
 </div>
@@ -115,7 +116,7 @@ body += footer(R)
 write("404.html", body)
 
 # ---------------- LLMS / SEO FILES ----------------
-pages = ["index.html", "services.html"] + [f"services/{s['slug']}.html" for s in SERVICES] + ["frontier.html", "approach.html", "team.html", "people/stephanie-abbott.html", "people/stuart-macmillan.html", "collective.html", "insights.html"] + [f"insights/{a['slug']}.html" for a in ARTICLES] + ["faq.html", "contact.html", "privacy.html"]
+pages = ["index.html", "services.html"] + [f"services/{s['slug']}.html" for s in SERVICES] + ["people-and-ai.html", "approach.html", "team.html", "people/stephanie-abbott.html", "people/stuart-macmillan.html", "collective.html", "insights.html"] + [f"insights/{a['slug']}.html" for a in ARTICLES] + ["faq.html", "contact.html", "privacy.html"]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for p in pages:
     loc = SITE + "/" if p == "index.html" else f"{SITE}/{p}"
@@ -141,11 +142,11 @@ Sitemap: {SITE}/sitemap.xml
 svc_lines = ""
 for s in SERVICES:
     d = SVC[s["slug"]]
-    offers = "; ".join(o[1] for o in d["offers"])
+    offers = "; ".join(html.unescape(o[1]) for o in d["offers"])
     svc_lines += f"- [{s['title']}]({SITE}/services/{s['slug']}.html): {s['card']} Signature offers: {offers}.\n"
 llms = f"""# CECai
 
-> CECai (Change Execution Consulting AI Inc.) is a people and organizational advisory firm based in Greater Saint John, New Brunswick, Canada. It gives CEOs and business owners senior HR leadership without a full-time hire: strategic HR advisory, fractional and interim HR leadership, talent and succession planning, executive coaching, organizational transformation and AI readiness, and career transition and outplacement. CECai works in person across Atlantic Canada (New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland and Labrador) and remotely across Canada and the United States. Tagline: People first. Frontier ready.
+> CECai (Change Execution Consulting AI Inc.) is an Atlantic Canadian people and organizational advisory practice. It gives CEOs, owners and executive teams senior HR leadership without a full-time hire: strategic HR advisory, fractional and interim HR leadership, talent and succession planning, executive coaching, organizational transformation and AI readiness, and career transition and outplacement. CECai works in person across Atlantic Canada (New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland and Labrador) and remotely across Canada and the United States. Tagline: People First. Future Ready.
 
 ## Key facts
 - Principal & Managing Partner: Stephanie Abbott, CPHR, CEC. 25+ years leading HR at Canadian and multinational organizations including Lockheed Martin, JPMorgan Chase and Amazon. Certified Executive Coach (Royal Roads University).
@@ -159,7 +160,7 @@ llms = f"""# CECai
 {svc_lines}
 ## Pages
 - [Home]({SITE}/)
-- [Frontier Work: the people side of AI]({SITE}/frontier.html): helping organizations move to human and AI agent teams, with role redesign, agent accountability and adoption.
+- [People & AI: the people side of AI]({SITE}/people-and-ai.html): helping organizations move to human and AI agent teams, with role redesign, agent accountability and adoption.
 - [How We Work]({SITE}/approach.html)
 - [Team]({SITE}/team.html)
 - [Stephanie Abbott]({SITE}/people/stephanie-abbott.html)

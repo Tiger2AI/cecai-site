@@ -7,7 +7,7 @@ AI_EMAIL = "stuart@cecai.ca"
 
 NAV = [
     ("services.html", "Services"),
-    ("frontier.html", "Frontier Work"),
+    ("people-and-ai.html", "People & AI"),
     ("approach.html", "How We Work"),
     ("team.html", "Team"),
     ("insights.html", "Insights"),
@@ -16,24 +16,24 @@ NAV = [
 SERVICES = [
     {"slug": "fractional-hr-leadership", "short": "Strategic HR & Fractional Leadership",
      "title": "Strategic HR Advisory & Fractional HR Leadership",
-     "card": "Senior HR leadership a few days a month, an interim lead through a gap, or a trusted advisor at the CEO's table.",
-     "tags": ["Fractional CHRO", "Interim HR", "HR foundations"]},
+     "card": "Senior HR leadership that flexes with your business, from an ongoing partner to an interim lead through a gap or a trusted advisor.",
+     "tags": ["HR assessment", "Fractional CHRO", "Interim HR", "HR foundations", "HR team mentoring"]},
     {"slug": "talent-succession", "short": "Talent & Succession",
      "title": "Talent Strategy, Recruitment & Succession Planning",
      "card": "Know who your critical people are, who comes next, and how to hire the roles that will shape the next five years.",
      "tags": ["Owner succession", "Talent reviews", "Key hires"]},
     {"slug": "executive-coaching", "short": "Executive Coaching",
      "title": "Executive Coaching & Leadership Development",
-     "card": "Certified executive coaching for leaders stepping up, stepping in, or leading their teams through AI and change.",
-     "tags": ["1:1 coaching", "Leading through AI", "Transitions"]},
+     "card": "Certified executive coaching for whatever leadership asks of you: a new role, a hard decision, a team that's scaling, navigating change or growing into what's next.",
+     "tags": ["1:1 coaching", "Team coaching", "Transitions", "Change & AI"]},
     {"slug": "transformation-ai-readiness", "short": "Transformation & AI Readiness",
      "title": "Organizational Transformation, Change & AI Readiness",
-     "card": "Org design, workforce planning and change leadership for the shift to human and AI teams. People first, frontier ready.",
-     "tags": ["Org design", "AI readiness", "Change"]},
+     "card": "Organization design, workforce planning and change leadership for the shift to human and AI teams. People First. Future Ready.",
+     "tags": ["Organization design", "AI readiness", "Change"]},
     {"slug": "career-transition", "short": "Career Transition",
      "title": "Career Transition & Outplacement",
-     "card": "When roles change or end, we help you lead it with dignity: redeploy first, support people well, protect your reputation.",
-     "tags": ["Outplacement", "Redeployment", "Leader transitions"]},
+     "card": "When roles change or end, we help you lead the process with dignity, finding new paths where possible and supporting people with care.",
+     "tags": ["Outplacement", "Respectful transitions", "Leader transitions"]},
 ]
 
 
@@ -119,12 +119,12 @@ def footer(root):
     <div class="foot-grid">
       <div>
         <a class="logo" href="{root}index.html">CEC<span class="ai">ai</span></a>
-        <p class="mt2" style="max-width:24em">People and organizational advisory for CEOs and business owners. Rooted in Saint John, New Brunswick. Working across Atlantic Canada and North America.</p>
+        <p class="mt2" style="max-width:24em">People and organizational advisory for CEOs, owners and executive teams. Rooted in Saint John, New Brunswick. Working across Atlantic Canada and North America.</p>
         <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
       <div><h4>Services</h4><ul>{svc}</ul></div>
-      <div><h4>Firm</h4><ul>
-        <li><a href="{root}frontier.html">Frontier Work</a></li>
+      <div><h4>Organization</h4><ul>
+        <li><a href="{root}people-and-ai.html">People &amp; AI</a></li>
         <li><a href="{root}approach.html">How We Work</a></li>
         <li><a href="{root}team.html">Team</a></li>
         <li><a href="{root}collective.html">The CECai Collective</a></li>
@@ -189,21 +189,44 @@ def crumb_schema(trail):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
 
 
-ORG = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": f"{SITE}/#org",
-    "name": "CECai",
-    "legalName": "Change Execution Consulting AI Inc.",
-    "url": SITE + "/",
-    "email": EMAIL,
-    "logo": f"{SITE}/assets/img/favicon.svg",
-    "description": "CECai is a people and organizational advisory firm based in Saint John, New Brunswick. It provides strategic HR advisory, fractional and interim HR leadership, talent and succession planning, executive coaching, organizational transformation and AI readiness, and career transition and outplacement to CEOs and business owners across Atlantic Canada and North America.",
-    "address": {"@type": "PostalAddress", "addressLocality": "Saint John", "addressRegion": "NB", "addressCountry": "CA"},
-    "areaServed": [{"@type": "AdministrativeArea", "name": n} for n in ["New Brunswick", "Nova Scotia", "Prince Edward Island", "Newfoundland and Labrador", "Canada", "United States"]],
-    "knowsAbout": ["Fractional HR leadership", "Interim HR leadership", "Organizational design", "Succession planning", "Executive coaching", "Change management", "AI readiness", "Human and AI agent teams", "Workforce planning", "Outplacement", "Employee and labour relations"],
-    "employee": [{"@id": f"{SITE}/people/stephanie-abbott.html#person"}, {"@id": f"{SITE}/people/stuart-macmillan.html#person"}],
-}
+ORG = {'@context': 'https://schema.org',
+ '@type': 'ProfessionalService',
+ '@id': 'https://cecai.ca/#org',
+ 'name': 'CECai',
+ 'legalName': 'Change Execution Consulting AI Inc.',
+ 'url': 'https://cecai.ca/',
+ 'email': 'stephanie@cecai.ca',
+ 'logo': 'https://cecai.ca/assets/img/favicon.svg',
+ 'description': 'CECai is an Atlantic Canadian people and organizational advisory practice. It provides strategic HR advisory, fractional '
+                'and interim HR leadership, talent and succession planning, executive coaching, organizational transformation and AI '
+                'readiness, and career transition and outplacement to CEOs, owners and executive teams across Atlantic Canada and North '
+                'America.',
+ 'address': {'@type': 'PostalAddress', 'addressRegion': 'NB', 'addressCountry': 'CA'},
+ 'areaServed': [{'@type': 'City', 'name': 'Saint John'},
+                {'@type': 'City', 'name': 'Moncton'},
+                {'@type': 'City', 'name': 'Fredericton'},
+                {'@type': 'City', 'name': 'Halifax'},
+                {'@type': 'City', 'name': 'Charlottetown'},
+                {'@type': 'City', 'name': "St. John's"},
+                {'@type': 'AdministrativeArea', 'name': 'New Brunswick'},
+                {'@type': 'AdministrativeArea', 'name': 'Nova Scotia'},
+                {'@type': 'AdministrativeArea', 'name': 'Prince Edward Island'},
+                {'@type': 'AdministrativeArea', 'name': 'Newfoundland and Labrador'},
+                {'@type': 'AdministrativeArea', 'name': 'Canada'},
+                {'@type': 'AdministrativeArea', 'name': 'United States'}],
+ 'knowsAbout': ['Fractional HR leadership',
+                'Interim HR leadership',
+                'Organizational design',
+                'Succession planning',
+                'Executive coaching',
+                'Change management',
+                'AI readiness',
+                'Human and AI agent teams',
+                'Workforce planning',
+                'Outplacement',
+                'Employee and labour relations'],
+ 'employee': [{'@id': 'https://cecai.ca/people/stephanie-abbott.html#person'},
+              {'@id': 'https://cecai.ca/people/stuart-macmillan.html#person'}]}
 
 
 def write(path, content):
@@ -211,3 +234,23 @@ def write(path, content):
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+# ---- Team portraits: drop a square JPG into static/assets/img/team/<slug>.jpg and it replaces the monogram ----
+TEAM_SLUGS = {"SA": "stephanie-abbott", "SM": "stuart-macmillan", "MM": "michael-mcconachie", "SW": "steve-wakeham",
+              "PB": "paul-bellavance", "DD": "darcy-daoust", "CK": "carol-kotacka"}
+TEAM_NAMES = {"SA": "Stephanie Abbott", "SM": "Stuart MacMillan", "MM": "Michael McConachie", "SW": "Steve Wakeham",
+              "PB": "Paul Bellavance", "DD": "Darcy Daoust", "CK": "Carol Kotacka"}
+_STATIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "static")
+
+
+def face(initials, root, tone="", style="", note=True, eager=False):
+    slug = TEAM_SLUGS.get(initials, "")
+    if slug and os.path.exists(os.path.join(_STATIC, "assets", "img", "team", slug + ".jpg")):
+        name = TEAM_NAMES[initials]
+        load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+        return (f'<div class="portrait has-photo" style="{style}"><picture>'
+                f'<source srcset="{root}assets/img/team/{slug}.webp" type="image/webp">'
+                f'<img src="{root}assets/img/team/{slug}.jpg" alt="{name}, CECai" width="800" height="800" {load} decoding="async"></picture></div>')
+    n = '<span class="note">Portrait to come</span>' if note else ""
+    return f'<div class="portrait {tone}" style="{style}"><span class="mono">{initials}</span>{n}</div>'
