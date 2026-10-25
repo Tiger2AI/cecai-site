@@ -1,6 +1,6 @@
 from common import *
 from articles import load as load_articles
-latest_posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"><div class="art" style="background:{a["color"]}">{tides(400,150,7,seed=a["seed"],stroke="#F0EEE9",cls="",opacity_base=.25)}</div><div class="body"><div class="meta">{a["tag"]}</div><h3>{a["title"]}</h3><p>{a["teaser"]}</p></div></a>' for a in load_articles()[:3])
+latest_posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"><div class="art" style="background:{a["color"]}">{photo(a["image"], "", "(max-width: 960px) 90vw, 360px") if a["image"] else tides(400,150,7,seed=a["seed"],stroke="#F0EEE9",cls="",opacity_base=.25)}</div><div class="body"><div class="meta">{a["tag"]}</div><h3>{a["title"]}</h3><p>{a["teaser"]}</p></div></a>' for a in load_articles()[:3])
 
 R = ""
 faqs = [
@@ -128,18 +128,19 @@ body += f"""
 
 <section class="section">
   <div class="wrap region">
+    {arch("lighthouse", "", eager=False).replace('class="arch-frame"', 'class="arch-frame" style="justify-self:center"')}
     <div>
       <div class="eyebrow">Where we work</div>
       <h2>Rooted in Atlantic Canada. Built for North America.</h2>
       <p class="lede">We know what it takes to lead in Atlantic Canada: tight-knit communities, family-owned businesses, unionized workplaces, bilingual teams and talent that is hard to replace. We bring that understanding, plus global experience, to every client.</p>
       <p class="small muted mt2 mb0">Serving clients in Saint John, Moncton, Fredericton, Halifax, Charlottetown, St. John's and communities across Atlantic Canada, with virtual support across North America.</p>
-    </div>
-    <ul class="reach reveal">
+    <ul class="reach reveal mt2">
       <li><b>Atlantic Canada</b><span>In person across New Brunswick, Nova Scotia, Prince Edward Island and Newfoundland and Labrador.</span></li>
       <li><b>Across Canada</b><span>Hybrid engagements with private, public and not-for-profit organizations from Iqaluit to Ottawa to Alberta.</span></li>
       <li><b>United States</b><span>Remote and on-site work, with experience leading HR across Canadian, U.S. and U.K. operations.</span></li>
       <li><b>Bilingual</b><span>Advisory and facilitation available in English and French.</span></li>
     </ul>
+    </div>
   </div>
 </section>
 

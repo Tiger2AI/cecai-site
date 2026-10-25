@@ -65,7 +65,7 @@ def _ver(rel):
     return hashlib.md5(open(p, "rb").read()).hexdigest()[:8]
 
 
-def head(title, desc, path, root, schema=None, og_type="website"):
+def head(title, desc, path, root, schema=None, og_type="website", og_image=None):
     canon = f"{SITE}/{path}" if path != "index.html" else f"{SITE}/"
     sch = ""
     for s in (schema or []):
@@ -85,7 +85,7 @@ def head(title, desc, path, root, schema=None, og_type="website"):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{canon}">
-<meta property="og:image" content="{SITE}/assets/img/og-cecai.png">
+<meta property="og:image" content="{og_image or SITE + "/assets/img/og-cecai.png"}">
 <meta property="og:locale" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{root}assets/img/favicon.svg" type="image/svg+xml">
@@ -259,3 +259,41 @@ def face(initials, root, tone="", style="", note=True, eager=False):
                 f'<img src="{root}assets/img/team/{slug}.jpg?v={_ver('assets/img/team/'+slug+'.jpg')}" alt="{name}, CECai" width="800" height="800" {load} decoding="async"></picture></div>')
     n = '<span class="note">Portrait to come</span>' if note else ""
     return f'<div class="portrait {tone}" style="{style}"><span class="mono">{initials}</span>{n}</div>'
+
+
+# ---- Site photography: optimized photos in static/assets/img/photos/<name>-<width>.(jpg|webp) ----
+PHOTOS = {
+    "lighthouse": ("atlantic-coast-lighthouse-guiding-light", "tall", "A lighthouse on the Atlantic coast lit at dusk, a steady guiding light"),
+    "centre": ("people-at-the-centre-of-change", "tall", "A professional standing at the centre of concentric circles, seen from above"),
+    "fractional": ("fractional-hr-leader-advising-executive", "tall", "A senior HR leader advising an executive at his laptop"),
+    "succession": ("succession-planning-deep-roots", "tall", "A large tree with deep spreading roots and sunlight through its canopy"),
+    "coaching": ("executive-coaching-conversation", "tall", "A smiling executive coach in a one-to-one conversation with a leader"),
+    "transformation": ("aligned-team-rowing-together", "tall", "A rowing crew pulling together in unison, seen from above"),
+    "transition": ("career-transition-new-directions", "tall", "A signpost pointing in several directions against a sunset sky"),
+    "approach": ("plain-spoken-hr-advice-meeting", "tall", "An HR advisor explaining a plan across the desk to a business owner"),
+    "collective": ("senior-specialists-collaborating", "tall", "Three senior specialists collaborating over coffee and notes"),
+    "ripple": ("ai-agent-accountability-ripple-effect", "wide", "A drop of water sending ripples across a calm surface"),
+    "bridge": ("business-succession-bridge-between-generations", "wide", "A bridge spanning a tall waterfall in a green gorge"),
+    "horizon": ("restructuring-with-dignity-new-horizon", "wide", "A person stepping carefully along a ridge toward a sunrise"),
+}
+_SIZES = {"tall": ((960, 1200), (640, 800)), "wide": ((1600, 900), (800, 450))}
+
+
+def photo_url(key, root=SITE + "/"):
+    name, shape, _ = PHOTOS[key]
+    return f"{root}assets/img/photos/{name}-{_SIZES[shape][0][0]}.jpg"
+
+
+def photo(key, root, sizes="(max-width: 960px) 90vw, 440px", eager=False, cls=""):
+    name, shape, alt = PHOTOS[key]
+    (w1, h1), (w2, h2) = _SIZES[shape]
+    base = f"{root}assets/img/photos/{name}"
+    load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    return (f'<picture class="{cls}">'
+            f'<source type="image/webp" srcset="{base}-{w2}.webp {w2}w, {base}-{w1}.webp {w1}w" sizes="{sizes}">'
+            f'<img src="{base}-{w1}.jpg" srcset="{base}-{w2}.jpg {w2}w, {base}-{w1}.jpg {w1}w" sizes="{sizes}" '
+            f'alt="{alt}" width="{w1}" height="{h1}" {load} decoding="async"></picture>')
+
+
+def arch(key, root, eager=True):
+    return f'<figure class="arch-frame">{photo(key, root, eager=eager)}</figure>'

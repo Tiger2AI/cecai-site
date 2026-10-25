@@ -333,3 +333,24 @@ em.accent { font-style: italic; color: var(--teal); }
 .portrait.has-photo::after { display: none; }
 .portrait.has-photo picture, .portrait.has-photo img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .portrait.has-photo img { object-fit: cover; object-position: center top; }
+
+/* ---- photography ---- */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 64px; align-items: center; }
+.hero-split > div { min-width: 0; }
+.arch-frame { margin: 0; position: relative; width: 100%; max-width: 420px; justify-self: end; }
+.arch-frame::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--brass); border-radius: 220px 220px 8px 8px; z-index: 0; }
+.arch-frame picture { position: relative; z-index: 1; display: block; aspect-ratio: 4 / 5; border-radius: 220px 220px 8px 8px; overflow: hidden; background: var(--teal-soft); box-shadow: var(--shadow); }
+.arch-frame img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 960px) {
+  .hero-split { grid-template-columns: 1fr; gap: 48px; }
+  .arch-frame { justify-self: start; max-width: 340px; }
+}
+@media (max-width: 560px) { .arch-frame { max-width: 82%; } }
+.post .art picture, .post .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post .art { height: 190px; }
+.post:hover .art img { transform: scale(1.03); }
+.post .art img { transition: transform .5s ease; }
+.article-hero { margin: 0 auto; max-width: 1000px; padding: 0 24px; }
+.article-hero picture { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--teal-soft); }
+.article-hero img { width: 100%; height: 100%; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) { .post .art img { transition: none; } }

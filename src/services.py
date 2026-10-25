@@ -3,6 +3,9 @@ import html, re
 
 from service_content import SVC
 
+SVC_PHOTO = {"fractional-hr-leadership": "fractional", "talent-succession": "succession", "executive-coaching": "coaching",
+             "transformation-ai-readiness": "transformation", "career-transition": "transition"}
+
 PEOPLE = {
     "stephanie": ("Stephanie Abbott", "CPHR, CEC", "Principal & Managing Partner", "SA", "", "people/stephanie-abbott.html"),
     "stuart": ("Stuart MacMillan", "MCMP, CCMP, CPHR", "Partner, AI & Transformation", "SM", "brass", "people/stuart-macmillan.html"),
@@ -14,11 +17,11 @@ for idx, s in enumerate(SERVICES):
     path = f"services/{s['slug']}.html"
     trail = [("services.html", "Services"), (path, s["short"])]
     svc_schema = {"@context": "https://schema.org", "@type": "Service", "name": s["title"], "serviceType": s["title"],
-                  "description": d["meta"], "provider": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/{path}",
+                  "description": d["meta"], "image": photo_url(SVC_PHOTO[s["slug"]]), "provider": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/{path}",
                   "areaServed": ["Atlantic Canada", "Canada", "United States"],
                   "hasOfferCatalog": {"@type": "OfferCatalog", "name": s["title"],
                                       "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": html.unescape(o[1]), "description": html.unescape(re.sub("<[^>]+>", "", o[2]))}} for o in d["offers"]]}}
-    body = head(f"{s['title']} | CECai", d["meta"], path, R, [svc_schema, faq_schema(d["faqs"]), crumb_schema(trail)])
+    body = head(f"{s['title']} | CECai", d["meta"], path, R, [svc_schema, faq_schema(d["faqs"]), crumb_schema(trail)], og_image=photo_url(SVC_PHOTO[s["slug"]]))
     body += header(R, "services.html")
     signals = "".join(f"<li>{x}</li>" for x in d["signals"])
     dos = "".join(f"<li>{x}</li>" for x in d["do"])
@@ -34,10 +37,12 @@ for idx, s in enumerate(SERVICES):
   {tides(cls="tides", lines=12, seed=idx * 1.3)}
   <div class="wrap" style="position:relative;z-index:2">
     {crumbs(R, trail)}
+    <div class="hero-split"><div>
     <div class="eyebrow">Practice 0{idx + 1} &middot; {s['title']}</div>
     <h1>{d['h1']}</h1>
     <p class="lede mt2">{d['lede']}</p>
     <div class="hero-ctas mt2"><a class="btn btn-primary" href="{R}contact.html">Talk to us about this</a><a class="btn btn-ghost" href="#offers">See how we help</a></div>
+    </div>{arch(SVC_PHOTO[s["slug"]], R)}</div>
   </div>
 </section>
 

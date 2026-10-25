@@ -10,7 +10,7 @@ ARTICLES = load_articles()
 
 R = ""
 trail = [("insights.html", "Insights")]
-posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"><div class="art" style="background:{a["color"]}">{tides(400,150,7,seed=a["seed"],stroke="#F0EEE9",cls="",opacity_base=.25)}</div><div class="body"><div class="meta">{a["tag"]}</div><h3>{a["title"]}</h3><p>{a["desc"]}</p><span class="textlink" style="margin-top:auto">Read</span></div></a>' for a in ARTICLES)
+posts = "".join(f'<a class="post reveal" href="insights/{a["slug"]}.html"><div class="art" style="background:{a["color"]}">{photo(a["image"], "", "(max-width: 960px) 90vw, 360px") if a["image"] else tides(400,150,7,seed=a["seed"],stroke="#F0EEE9",cls="",opacity_base=.25)}</div><div class="body"><div class="meta">{a["tag"]}</div><h3>{a["title"]}</h3><p>{a["desc"]}</p><span class="textlink" style="margin-top:auto">Read</span></div></a>' for a in ARTICLES)
 body = head("Insights | HR, Succession, AI and Change for CEOs & Executive Teams | CECai", "Practical thinking for CEOs, owners and executive teams on fractional HR, succession, AI and organization design, leadership and restructuring, from CECai in Atlantic Canada.", "insights.html", R, [ORG, crumb_schema(trail)])
 body += header(R, "insights.html")
 body += f"""<section class="page-hero">{tides(lines=12, seed=16)}<div class="wrap" style="position:relative;z-index:2">{crumbs(R, trail)}<div class="eyebrow">Insights</div><h1>Practical thinking for <em class="accent">the year ahead.</em></h1><p class="lede mt2">Short, useful pieces for CEOs, owners and executive teams on the people questions that matter most right now.</p></div></section>
@@ -27,12 +27,13 @@ for a in ARTICLES:
     art = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["desc"], "datePublished": a["date"].isoformat(),
            "author": [{"@type": "Person", "name": n.strip()} for n in a["author"].split("&")], "publisher": {"@id": f"{SITE}/#org"},
            "mainEntityOfPage": f"{SITE}/{path}", "about": a["tag"], "inLanguage": "en-CA"}
-    b = head(f"{a['title']} | CECai Insights", a["desc"], path, R, [art, crumb_schema(tr)], og_type="article")
+    if a["image"]: art["image"] = photo_url(a["image"])
+    b = head(f"{a['title']} | CECai Insights", a["desc"], path, R, [art, crumb_schema(tr)], og_type="article", og_image=photo_url(a["image"]) if a["image"] else None)
     b += header(R, "insights.html")
     key = "".join(f"<li>{k}</li>" for k in a["key"])
     src = "".join(f'<li><a href="{u}" rel="noopener">{t}</a></li>' for t, u in a["sources"])
     b += f"""<section class="page-hero" style="padding-bottom:40px">{tides(lines=10, seed=a['seed'])}<div class="wrap" style="position:relative;z-index:2;max-width:860px">{crumbs(R, tr)}<div class="eyebrow">{a['tag']}</div><h1 style="font-size:clamp(2rem,4.2vw,3rem)">{a['title']}</h1><p class="muted mt2">By {a['author']} &middot; {a['date_label']} &middot; {a['minutes']} minute read</p></div></section>
-<section class="section bg-white" style="padding-top:64px"><article class="wrap article">
+<section class="section bg-white" style="padding-top:64px">{('<div class="article-hero">' + photo(a["image"], R, "(max-width: 1000px) 95vw, 1000px", eager=True) + '</div>') if a["image"] else ""}<article class="wrap article" style="margin-top:56px">
 <div class="key"><h3>Key points</h3><ul>{key}</ul></div>
 {a['body']}
 <div class="sources"><b>Sources</b><ul>{src}</ul></div>

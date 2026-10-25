@@ -6,6 +6,7 @@ tag: Succession
 description: APEC expects about 25,000 Atlantic Canadian small businesses to change hands or close as owners retire, including 7,900 in New Brunswick. Why succession planning starts with people.
 author: Stephanie Abbott
 date: '2026-10-25'
+image: bridge
 color: moss
 key_points:
 - APEC expects about 25,000 Atlantic Canadian small businesses to change hands or close as owners retire.

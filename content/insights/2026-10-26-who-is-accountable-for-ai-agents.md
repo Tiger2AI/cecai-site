@@ -6,6 +6,7 @@ tag: AI & organization design
 description: Only 24% of leadership teams agree on who is accountable for AI agents. A practical guide for CEOs and executive teams to assign human ownership, supervision and decision rights for AI agents.
 author: Stuart MacMillan & Stephanie Abbott
 date: '2026-10-26'
+image: ripple
 color: teal
 key_points:
 - AI agents are already doing work, but most leadership teams haven't agreed who owns them.
