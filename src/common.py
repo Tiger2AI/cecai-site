@@ -107,7 +107,7 @@ def header(root, current):
         items += f'<li><a href="{root}{href}"{cur}>{label}</a></li>'
     return f"""<header class="site-header">
   <div class="wrap nav">
-    <a class="logo" href="{root}index.html" aria-label="CECai home">CEC<span class="ai">ai</span><small>People &amp; Organization<br>Advisory</small></a>
+    <a class="logo" href="{root}index.html" aria-label="CECai home"><img src="{root}assets/img/brand/cecai-logo.svg?v={_ver("assets/img/brand/cecai-logo.svg")}" alt="CECai" width="130" height="52"><small>People &amp; Organization<br>Advisory</small></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="nav-links">{items}<li><a class="btn btn-primary" href="{root}contact.html">Book a conversation</a></li></ul>
   </div>
@@ -123,7 +123,7 @@ def footer(root):
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="{root}index.html">CEC<span class="ai">ai</span></a>
+        <a class="logo" href="{root}index.html"><img src="{root}assets/img/brand/cecai-logo-reversed.svg?v={_ver("assets/img/brand/cecai-logo-reversed.svg")}" alt="CECai" width="150" height="60"></a>
         <p class="mt2" style="max-width:24em">People and organizational advisory for CEOs, owners and executive teams. Rooted in Saint John, New Brunswick. Working across Atlantic Canada and North America.</p>
         <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
@@ -201,7 +201,7 @@ ORG = {'@context': 'https://schema.org',
  'legalName': 'Change Execution Consulting AI Inc.',
  'url': 'https://cecai.ca/',
  'email': 'stephanie@cecai.ca',
- 'logo': 'https://cecai.ca/assets/img/favicon.svg',
+ 'logo': 'https://cecai.ca/assets/img/brand/cecai-logo.png',
  'description': 'CECai is an Atlantic Canadian people and organizational advisory practice. It provides strategic HR advisory, fractional '
                 'and interim HR leadership, talent and succession planning, executive coaching, organizational transformation and AI '
                 'readiness, and career transition and outplacement to CEOs, owners and executive teams across Atlantic Canada and North '
@@ -251,12 +251,12 @@ _STATIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "static
 
 def face(initials, root, tone="", style="", note=True, eager=False):
     slug = TEAM_SLUGS.get(initials, "")
-    if slug and os.path.exists(os.path.join(_STATIC, "assets", "img", "team", slug + ".jpg")):
+    if slug and os.path.exists(os.path.join(_STATIC, "assets", "img", "team", slug + ".webp")):
         name = TEAM_NAMES[initials]
         load = 'fetchpriority="high"' if eager else 'loading="lazy"'
         return (f'<div class="portrait has-photo" style="{style}"><picture>'
                 f'<source srcset="{root}assets/img/team/{slug}.webp?v={_ver('assets/img/team/'+slug+'.webp')}" type="image/webp">'
-                f'<img src="{root}assets/img/team/{slug}.jpg?v={_ver('assets/img/team/'+slug+'.jpg')}" alt="{name}, CECai" width="800" height="800" {load} decoding="async"></picture></div>')
+                f'<img src="{root}assets/img/team/{slug}.png?v={_ver('assets/img/team/'+slug+'.png')}" alt="{name}, CECai" width="800" height="800" {load} decoding="async"></picture></div>')
     n = '<span class="note">Portrait to come</span>' if note else ""
     return f'<div class="portrait {tone}" style="{style}"><span class="mono">{initials}</span>{n}</div>'
 
