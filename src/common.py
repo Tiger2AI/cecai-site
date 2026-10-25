@@ -4,6 +4,9 @@ SITE = "https://cecai.ca"
 OUT = os.environ.get("CECAI_OUT", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_site"))
 EMAIL = "stephanie@cecai.ca"
 AI_EMAIL = "stuart@cecai.ca"
+# Web3Forms access key for the contact form (from web3forms.com, registered to stephanie@cecai.ca).
+# Leave empty and the form tells visitors to email Stephanie directly instead.
+WEB3FORMS_KEY = ""
 
 NAV = [
     ("services.html", "Services"),

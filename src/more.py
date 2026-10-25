@@ -82,11 +82,13 @@ body += f"""<section class="page-hero">{tides(lines=12, seed=20)}<div class="wra
     <li><b>Reply</b><span>Within one business day.</span></li>
   </ul>
 </div>
-<form class="form" data-contact="{EMAIL}">
+<form class="form" data-contact="{EMAIL}" data-key="{WEB3FORMS_KEY}" novalidate>
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
   <div class="row2"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
-  <div class="field"><label for="role">Your role</label><input id="role" name="role" autocomplete="organization-title" placeholder="e.g. CEO, Owner"></div></div>
-  <div class="row2"><div class="field"><label for="org">Organization</label><input id="org" name="org" autocomplete="organization"></div>
-  <div class="field"><label for="size">Size</label><select id="size" name="size"><option>Under 50 people</option><option>50 to 250</option><option>250 to 1,000</option><option>1,000+</option></select></div></div>
+  <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div></div>
+  <div class="row2"><div class="field"><label for="role">Your role</label><input id="role" name="role" autocomplete="organization-title" placeholder="e.g. CEO, Owner"></div>
+  <div class="field"><label for="org">Organization</label><input id="org" name="org" autocomplete="organization"></div></div>
+  <div class="field"><label for="size">Size</label><select id="size" name="size"><option>Under 50 people</option><option>50 to 250</option><option>250 to 1,000</option><option>1,000+</option></select></div>
   <div class="field"><label>What would you like to talk about?</label><div class="chips">{chips}</div></div>
   <div class="field"><label for="message">What's on your mind?</label><textarea id="message" name="message" placeholder="A sentence or two is plenty."></textarea></div>
   <button class="btn btn-primary" type="submit">Request a conversation</button>

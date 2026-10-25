@@ -356,3 +356,6 @@ em.accent { font-style: italic; color: var(--teal); }
 .article-hero picture { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--teal-soft); }
 .article-hero img { width: 100%; height: 100%; object-fit: cover; }
 @media (prefers-reduced-motion: reduce) { .post .art img { transition: none; } }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-error { color: #8A2E1F; font-size: .92rem; margin-top: 14px; }
