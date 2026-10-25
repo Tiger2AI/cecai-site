@@ -6,6 +6,7 @@ tag: Transitions
 description: LHH research finds 87% of HR leaders have conducted or plan layoffs and most see restructuring as a regular event. Five practical moves to restructure with dignity and protect trust.
 author: Stephanie Abbott
 date: '2026-10-24'
+image: horizon
 color: cocoa
 key_points:
 - 87% of HR leaders have conducted or plan layoffs; 78% now see layoffs as regular events.

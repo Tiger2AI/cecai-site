@@ -7,6 +7,7 @@ description: One or two sentences for Google and AI search (under 160 characters
 author: Stephanie Abbott
 date: '2026-11-15'
 color: teal          # teal, moss, cocoa or brass
+image: ripple        # optional: a photo key from PHOTOS in src/common.py
 draft: true          # remove this line (or set false) to publish
 key_points:
 - First takeaway in one line.

@@ -23,7 +23,7 @@ def load():
             author=m.get("author", "CECai"), date=d, date_label=d.strftime("%B %Y"),
             minutes=max(2, round(words / 220)), color=COLORS.get(m.get("color", "teal"), "var(--teal)"),
             seed=1.2 + (sum(map(ord, m["slug"])) % 50) / 10, key=m.get("key_points", []),
-            sources=[(s["title"], s["url"]) for s in m.get("sources", [])],
+            sources=[(s["title"], s["url"]) for s in m.get("sources", [])], image=m.get("image"),
             body=markdown.markdown(body.strip(), extensions=["extra", "sane_lists"]),
         ))
     items.sort(key=lambda a: a["date"], reverse=True)

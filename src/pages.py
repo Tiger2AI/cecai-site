@@ -11,15 +11,17 @@ faqs = [
   ("Will AI mean we need fewer people?", "Sometimes it changes how many people a process needs, and often it changes what those people do. Leading organizations are pushing past efficiency toward growth and better service, and they avoid automating away the entry-level roles that build their future leaders. We help you make these choices deliberately and communicate them honestly."),
   ("Do you sell or implement AI software?", "No. We are vendor-neutral on the people side. We work alongside your technology partners, or recommend them, and focus on roles, structure, skills, accountability, adoption and measurement."),
 ]
-body = head("People & AI | The People Side of AI | CECai", "Get your organization ready for human and AI agent teams. Role redesign, agent accountability, workforce planning, leadership and adoption, from an HR-led team with enterprise AI experience.", "people-and-ai.html", R, [ORG, faq_schema(faqs), crumb_schema(trail)])
+body = head("People & AI | The People Side of AI | CECai", "Get your organization ready for human and AI agent teams. Role redesign, agent accountability, workforce planning, leadership and adoption, from an HR-led team with enterprise AI experience.", "people-and-ai.html", R, [ORG, faq_schema(faqs), crumb_schema(trail)], og_image=photo_url("centre"))
 body += header(R, "people-and-ai.html")
 body += f"""
 <section class="page-hero bg-deep" style="color:var(--cloud)">{tides(stroke="#F0EEE9", lines=14, seed=6, opacity_base=.15)}<div class="wrap" style="position:relative;z-index:2">
 <nav class="crumbs" aria-label="Breadcrumb" style="color:rgba(240,238,233,.7)"><a href="index.html" style="color:rgba(240,238,233,.7)">Home</a><span>/</span>People &amp; AI</nav>
+<div class="hero-split"><div>
 <div class="eyebrow" style="color:#CDE0DE">People &amp; AI &middot; The people side of AI</div>
 <h1 style="color:var(--cloud)">AI changes the work. <em class="accent" style="color:var(--brass)">People</em> change the organization.</h1>
 <p class="lede mt2" style="color:rgba(240,238,233,.85)">The organizations getting real value from AI aren't the ones with the most tools. They're the ones that redesigned roles, structures and leadership around a new way of working. That's people work, and it's what we do.</p>
 <div class="hero-ctas mt2"><a class="btn btn-light" href="contact.html">Book a People &amp; AI Readiness conversation</a></div>
+</div>{arch("centre", R)}</div>
 </div></section>
 
 <section class="section bg-white"><div class="wrap split">
@@ -81,14 +83,16 @@ write("people-and-ai.html", body)
 
 # ---------------- APPROACH ----------------
 trail = [("approach.html", "How We Work")]
-body = head("How We Work | Engagement Models & Principles | CECai", "How CECai works with CEOs, owners and executive teams: advisory retainers, fractional and interim leadership, fixed-scope projects and coaching. Senior people, plain language, practical results.", "approach.html", R, [ORG, crumb_schema(trail)])
+body = head("How We Work | Engagement Models & Principles | CECai", "How CECai works with CEOs, owners and executive teams: advisory retainers, fractional and interim leadership, fixed-scope projects and coaching. Senior people, plain language, practical results.", "approach.html", R, [ORG, crumb_schema(trail)], og_image=photo_url("approach"))
 body += header(R, "approach.html")
 body += f"""
 <section class="page-hero">{tides(lines=12, seed=8)}<div class="wrap" style="position:relative;z-index:2">
 {crumbs(R, trail)}
+<div class="hero-split"><div>
 <div class="eyebrow">How we work</div>
 <h1>Warm in how we work. <em class="accent">Clear</em> in what we deliver.</h1>
 <p class="lede mt2">We build trust quickly, tell you what we really see, and do the work alongside your leaders. Here's what you can expect from us.</p>
+</div>{arch("approach", R)}</div>
 </div></section>
 
 <section class="section bg-white"><div class="wrap">
@@ -244,15 +248,17 @@ print("team/people ok")
 # ---------------- COLLECTIVE ----------------
 R = ""
 trail = [("collective.html", "The CECai Collective")]
-body = head("The CECai Collective | Senior Partner Network | CECai", "The CECai Collective is a network of senior specialists in AI, digital, ERP and organizational transformation who extend CECai's HR advisory practice. One trusted lead, a bench of experts.", "collective.html", R, [ORG, crumb_schema(trail)])
+body = head("The CECai Collective | Senior Partner Network | CECai", "The CECai Collective is a network of senior specialists in AI, digital, ERP and organizational transformation who extend CECai's HR advisory practice. One trusted lead, a bench of experts.", "collective.html", R, [ORG, crumb_schema(trail)], og_image=photo_url("collective"))
 body += header(R, "team.html")
 coll = "".join(f'<article class="person reveal">{face(m, R, t, note=False)}<h3 style="margin-bottom:4px">{n}</h3><div class="role">{r}</div><div class="creds" style="margin-bottom:10px">{c}</div><p>{b}</p></article>' for n, r, c, m, t, b in COLLECTIVE)
 body += f"""
 <section class="page-hero">{tides(lines=12, seed=14)}<div class="wrap" style="position:relative;z-index:2">
 {crumbs(R, trail)}
+<div class="hero-split"><div>
 <div class="eyebrow">The CECai Collective</div>
 <h1>One trusted lead. <em class="accent">A bench</em> of senior specialists.</h1>
 <p class="lede mt2">Big challenges rarely fit inside one discipline. The Collective lets us bring the right senior expertise to your work, without the overhead of a large organization.</p>
+</div>{arch("collective", R)}</div>
 </div></section>
 <section class="section bg-white"><div class="wrap">
   <div class="grid g3">
