@@ -1,4 +1,4 @@
-import json, math, os, html
+import json, math, os, html, hashlib
 
 SITE = "https://cecai.ca"
 OUT = os.environ.get("CECAI_OUT", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_site"))
@@ -60,6 +60,11 @@ def tides(width=900, height=640, lines=14, seed=0.0, stroke="#1F5C63", accent="#
     return f'<svg class="{cls}" viewBox="0 0 {width} {height}" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">{"".join(paths)}</svg>'
 
 
+def _ver(rel):
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "static", rel)
+    return hashlib.md5(open(p, "rb").read()).hexdigest()[:8]
+
+
 def head(title, desc, path, root, schema=None, og_type="website"):
     canon = f"{SITE}/{path}" if path != "index.html" else f"{SITE}/"
     sch = ""
@@ -88,7 +93,7 @@ def head(title, desc, path, root, schema=None, og_type="website"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{root}assets/css/site.css">
+<link rel="stylesheet" href="{root}assets/css/site.css?v={_ver("assets/css/site.css")}">
 {sch}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -143,7 +148,7 @@ def footer(root):
     </div>
   </div>
 </footer>
-<script src="{root}assets/js/site.js" defer></script>
+<script src="{root}assets/js/site.js?v={_ver("assets/js/site.js")}" defer></script>
 </body>
 </html>
 """
