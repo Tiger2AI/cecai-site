@@ -14,6 +14,8 @@ faqs = [
      "No. We work in person across New Brunswick, Nova Scotia, Prince Edward Island and Newfoundland and Labrador, and support clients across Canada and the United States through hybrid and remote engagements."),
     ("How does AI fit into an HR organization?",
      "AI is changing what jobs contain, how teams are structured and what leaders need to be good at. We help you redesign roles, structures and ways of working for teams of people and AI agents, and we keep the decisions that matter in human hands. Our AI and transformation partner, Stuart MacMillan, advises enterprise AI programs at North American scale."),
+    ("We don't have anyone in HR. Can you help?",
+     "Yes. Many of our clients start with no HR function at all. We can lead HR for you, set up the essentials (policies, onboarding, compliance and performance), and help you hire your first HR person when you're ready."),
     ("How do engagements start?",
      "With a free 30-minute conversation. If there is a fit, we propose a clear scope, timeline and fee, usually within a few days. Many clients start with a short diagnostic or a monthly advisory retainer before moving into a larger piece of work."),
 ]
@@ -21,12 +23,12 @@ faqs = [
 schema = [ORG, {"@context": "https://schema.org", "@type": "WebSite", "name": "CECai", "url": SITE + "/", "publisher": {"@id": f"{SITE}/#org"}}, faq_schema(faqs)]
 
 asks = [
-    ("We're growing faster than our HR can keep up.", "Fractional HR leadership", "fractional-hr-leadership"),
+    ("We need senior HR expertise, but not a full-time executive.", "Fractional HR leadership", "fractional-hr-leadership"),
     ("I need to know who leads when I step back.", "Succession planning", "talent-succession"),
     ("My leaders are capable. They're also running on empty.", "Executive coaching", "executive-coaching"),
     ("Everyone's talking about AI. What does it mean for our people?", "Transformation & AI readiness", "transformation-ai-readiness"),
     ("We have to restructure, and I want to do it right.", "Career transition", "career-transition"),
-    ("Our HR is one person and a lot of spreadsheets.", "HR foundations", "fractional-hr-leadership"),
+    ("We've never had proper HR, and it's starting to show.", "HR foundations", "fractional-hr-leadership"),
 ]
 ask_html = "".join(f'<a class="ask" href="services/{s}.html"><div><q>{q}</q><small>{l}</small></div><span class="go" aria-hidden="true">&rarr;</span></a>' for q, l, s in asks)
 
@@ -44,18 +46,19 @@ body += f"""
 <section class="hero">
   {tides()}
   <div class="wrap">
-    <div class="eyebrow">People &amp; organizational advisory &middot; Atlantic Canada</div>
+    <div class="eyebrow">HR Consulting &amp; Executive Coaching &middot; Atlantic Canada</div>
     <h1>The future of work is still <em class="accent">human.</em></h1>
-    <p class="lede">CECai helps CEOs, owners and executive teams build the leaders, teams and organizations they need for growth, change and the age of AI. Senior HR leadership, exactly when and how you need it.</p>
+    <p class="lede">CECai helps CEOs, owners and executive teams build strong leaders, capable people and organizations ready for growth, change and the age of AI. Senior HR leadership, exactly when and how you need it.</p>
     <div class="hero-ctas"><a class="btn btn-primary" href="contact.html">Book a conversation</a><a class="btn btn-ghost" href="services.html">Explore our services</a></div>
     <div class="hero-meta"><span>25+ years of senior HR leadership</span><span>Atlantic roots, North American reach</span><span>People First. Future Ready.</span></div>
   </div>
 </section>
 
-<section class="section tight bg-white">
-  <div class="wrap">
-    <p class="center small muted mb0" style="letter-spacing:.12em;text-transform:uppercase">Our team's experience was built leading HR and change at</p>
-    <p class="center serif" style="font-size:clamp(1.1rem,2vw,1.45rem);color:var(--ink-2);margin:14px 0 0;line-height:1.7">Lockheed Martin &nbsp;&middot;&nbsp; JPMorgan Chase &nbsp;&middot;&nbsp; Amazon &nbsp;&middot;&nbsp; Big 4 consulting &nbsp;&middot;&nbsp; Government of Canada &nbsp;&middot;&nbsp; Global defence, energy &amp; manufacturing</p>
+<section class="section tight bg-white industries">
+  <div class="wrap center" style="max-width:860px">
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem);margin:0">Experience Across Industries.<br><em class="accent">Expertise That Delivers.</em></h2>
+    <p class="muted" style="margin:16px auto 0;max-width:720px">Our expertise is grounded in decades of HR leadership, organizational change, and business transformation experience. As seasoned business and transformation advisors, we bring strategic insight and practical expertise developed across complex, highly regulated, and global organizations.</p>
+    <p class="serif" style="font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--ink-2);margin:22px 0 0;line-height:1.75"><span style="white-space:nowrap">Defence &amp; Aerospace</span> &middot; <span style="white-space:nowrap">Banking &amp; Financial Services</span> &middot; <span style="white-space:nowrap">Technology &amp; E-Commerce</span> &middot; <span style="white-space:nowrap">Professional Services &amp; Consulting</span> &middot; <span style="white-space:nowrap">Government &amp; Public Sector</span> &middot; <span style="white-space:nowrap">Energy &amp; Manufacturing</span></p>
   </div>
 </section>
 
